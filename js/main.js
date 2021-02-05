@@ -6,7 +6,8 @@ let isNumber = function(n){
 
 
 function guessNum(){
-  let guess = 50;
+  let guess = Math.floor(1 + Math.random() * (100 + 1 - 1));
+  console.log(guess);
   let tries = 10;
   function checkNum(textCheck){
     let x = prompt(textCheck);
@@ -21,11 +22,11 @@ function guessNum(){
     else if(!isNumber(x)){
       checkNum('Введи число!');
     }
-    else if(Number(x) > 50){
+    else if(Number(x) > guess){
       tries--;
       checkNum('Загаданное число меньше, осталось попыток ' + tries);
     }
-    else if(Number(x) < 50){
+    else if(Number(x) < guess){
       tries--;
       checkNum('Загаданное число больше, осталось попыток ' + tries);
     }
